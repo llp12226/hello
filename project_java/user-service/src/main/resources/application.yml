@@ -1,0 +1,22 @@
+server:
+  port: 8081
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/llp?useSSL=false&serverTimezone=UTC&useUnicode=true&characterEncoding=utf8
+    password: 123456
+    username: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+#    注册服务
+  application:
+    name: userService
+  cloud:
+    nacos:
+      server-addr: localhost:8848
+      discovery:
+        cluster-name: SH
+        namespace: e78e6ec2-e899-4cd2-adc8-7b82fa119429 #命名空间
+        ephemeral: true #是否是临时实例  false 代表是非临时实例
+mybatis:
+  type-aliases-package: com.example.pojo
+  configuration:
+    map-underscore-to-camel-case: true
